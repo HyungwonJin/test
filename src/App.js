@@ -2,6 +2,10 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [isDisable, setIsDisable] = useState(false);
+  const handleChecked = (e) => {
+    setIsDisable(e.target.checked);
+  };
   const [buttonColor, setButtonColor] = useState("red");
   const newButtonColor = buttonColor === "red" ? "blue" : "red";
   const [text, setText] = useState("Change to blue");
@@ -13,9 +17,18 @@ function App() {
   };
   return (
     <div>
-      <button onClick={handleClick} style={{ backgroundColor: buttonColor }}>
+      <button
+        onClick={handleClick}
+        disabled={isDisable}
+        style={{ backgroundColor: buttonColor }}
+      >
         {text}
       </button>
+      <input
+        type="checkbox"
+        checked={isDisable}
+        onChange={(e) => handleChecked(e)}
+      />
     </div>
   );
 }
