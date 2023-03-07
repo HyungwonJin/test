@@ -20,7 +20,7 @@ function App() {
       <button
         onClick={handleClick}
         disabled={isDisable}
-        style={{ backgroundColor: buttonColor }}
+        style={{ backgroundColor: isDisable ? "gray" : buttonColor }}
       >
         {text}
       </button>
