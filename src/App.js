@@ -26,9 +26,11 @@ function App() {
       </button>
       <input
         type="checkbox"
+        id="disable-button-checkbox"
         checked={isDisable}
         onChange={(e) => handleChecked(e)}
       />
+      <label htmlFor="disable-button-checkbox">Disable button</label>
     </div>
   );
 }
